@@ -1,0 +1,29 @@
+{% block article_search_input %}
+    <input type="hidden"
+           name="fast-order-product-id-{{ id }}"
+           id="fast-order-product-id-{{ id }}"
+           value=""
+    />
+    <input type="hidden"
+           name="fast-order-product-price-{{ id }}"
+           id="fast-order-product-price-{{ id }}"
+           class="fast-order-product-price"
+           value=""
+    />
+    <input type="text"
+           name="fast-order-{{ id }}"
+           id="fast-order-{{ id }}"
+           class="form-control fast-order-input"
+           autocomplete="off"
+           autocapitalize="off"
+           placeholder="{{ "fastOrderInput.inputPlaceholder"|trans|striptags }}"
+           aria-label="{{ "fastOrderInput.inputPlaceholder"|trans|striptags }}"
+           value="{{ page.searchTerm }}"
+           required="required"
+    >
+    {% if id == 0 %}
+        <span style="float:left;">
+            {{ "fastOrderHeader.mainProduct"|trans|striptags }}
+        </span>
+    {% endif %}
+{% endblock %}

@@ -1,0 +1,27 @@
+<?xml version="1.0" ?>
+
+<container xmlns="http://symfony.com/schema/dic/services"
+           xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+           xsi:schemaLocation="http://symfony.com/schema/dic/services http://symfony.com/schema/dic/services/services-1.0.xsd">
+
+    <services>
+        <service id="Js\FastOrder\Page\FastOrderArticlePageLoader">
+            <argument type="service" id="Shopware\Core\Content\Product\SalesChannel\Suggest\ProductSuggestRoute"/>
+            <argument type="service" id="Shopware\Storefront\Page\GenericPageLoader"/>
+        </service>
+
+        <service id="Js\FastOrder\Controller\FastOrderController" public="true">
+            <argument type="service" id="Js\FastOrder\Page\FastOrderArticlePageLoader"/>
+            <argument type="service" id="Shopware\Core\Checkout\Cart\LineItemFactoryRegistry"/>
+            <argument type="service" id="Shopware\Core\Checkout\Cart\SalesChannel\CartService"/>
+            <argument type="service" id="fast_order_orders.repository"/>
+            <call method="setContainer">
+                <argument type="service" id="service_container"/>
+            </call>
+        </service>
+
+        <service id="Js\FastOrder\Entity\FastOrderOrdersDefinition">
+            <tag name="shopware.entity.definition" entity="fast_order_orders" />
+        </service>
+    </services>
+</container>

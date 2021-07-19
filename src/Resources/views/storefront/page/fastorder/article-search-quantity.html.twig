@@ -1,0 +1,13 @@
+{% block fast_order_quantity_field %}
+    <input type="text"
+       name="fast-order-quantity-{{ id }}"
+       id="fast-order-quantity-{{ id }}"
+       class="form-control fast-order-quantity"
+       autocomplete="off"
+       autocapitalize="off"
+       placeholder="{{ "fastOrderInput.quantityPlaceholder"|trans|striptags }}"
+       aria-label="{{ "fastOrderInput.quantityPlaceholder"|trans|striptags }}"
+       value=""
+       required="required"
+    >
+{% endblock %}

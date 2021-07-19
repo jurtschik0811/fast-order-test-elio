@@ -1,0 +1,5 @@
+{% block article_search_amount %}
+    <span class="article_search_amount" style="float:right;display:block">
+        <div style="display:inline">{% if ident == 'total' %} {{ "fastOrderHeader.totalAmount"|trans }} {% endif %} €</div><div class="article-search-amount-{{ ident }}" style="display:inline">0.00</div>
+    </span>
+{% endblock %}

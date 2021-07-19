@@ -1,0 +1,15 @@
+{
+    "fastOrderHeader": {
+        "article": "Article",
+        "quantity": "Quantity",
+        "mainProduct": "Main product",
+        "totalAmount": "Total amount"
+    },
+    "fastOrderInput": {
+        "inputPlaceholder": "Search articles...",
+        "quantityPlaceholder": "..."
+    },
+    "fastOrderAction": {
+        "order": "Order"
+    }
+}
