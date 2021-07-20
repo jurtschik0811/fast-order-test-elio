@@ -18,10 +18,8 @@ class Migration1626690027FastOrderOrders extends MigrationStep
             CREATE TABLE IF NOT EXISTS `fast_order_orders` (
                 `id`                BINARY(16),
                 `created_at`        DATETIME(3) NULL,
-<<<<<<< HEAD
-=======
                 `updated_at`        DATETIME(3) NULL,
->>>>>>> origin/main
+                `session_id`        VARCHAR(255) NULL,
                 `orders`            JSON,
                 `quantity_total`    INT(5),
                 `price_total`       DOUBLE(10, 2),
